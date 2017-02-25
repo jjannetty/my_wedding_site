@@ -1,0 +1,147 @@
+@charset "utf-8";
+@import "normalize";
+@import "bourbon/bourbon";
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+@mixin small-device {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+$yellow: #FFCF00;
+$black: #282832;
+
+body {
+  color: $black;
+  text-align: center;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+}
+
+#map {
+  width: 400px;
+  height: 232px
+}
+
+h2 {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+nav {
+  @include clearfix;
+  background: $yellow;
+
+  .links {
+    float: right;
+
+    .link {
+      @include transition(all 0.2s);
+      color: $black;
+      float: left;
+      margin: 26px 30px 0 0;
+      text-decoration: none;
+
+      &:hover {
+        color: white;
+
+        @include small-device {
+          color: $black;
+        }
+      }
+
+      &:active {
+        opacity: 0.7;
+
+        @include small-device {
+          color: white;
+        }
+      }
+    }
+
+    @include small-device {
+      float: none;
+
+      .link {
+        display: inline-block;
+        padding: 20px 10px;
+        margin: 0 auto;
+        float: none;
+        font-size: 13px;
+      }
+    }
+
+    @include small-device {
+      position: fixed;
+      right: 0;
+      left: 0;
+      z-index: 99999;
+    }
+  }
+  .logo {
+    float: left;
+    margin: 20px 0 0 30px;
+
+    @include small-device {
+      display: none;
+    }
+  }
+}
+
+.button {
+  @include transition(all 0.2s);
+  color: $black;
+  border: 2px solid white;
+  border-radius: 3px;
+  display: block;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 30px;
+  width: 200px;
+  margin: 0 auto;
+  text-decoration: none;
+
+  &:hover {
+    background: white;
+
+    @include small-device {
+      background: none;
+    }
+  }
+
+  &:active {
+    opacity: 0.7;
+
+    @include small-device {
+      background: white;
+    }
+  }
+}
+
+.hero {
+  background: $yellow;
+  padding: 148px 0 200px;
+
+  @include small-device {
+    padding: 120px 0 70px;
+  }
+}
+
+.hero-logo {
+  margin-bottom: 80px;
+
+  @include small-device {
+    width: 70%;
+  }
+}
+
+section {
+  padding: 100px 2%;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 960px;
+  width: 100%;
+}
