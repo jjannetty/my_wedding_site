@@ -17,12 +17,4 @@
     = javascript_include_tag :all
 
   %body{ class: page_classes }
-    %nav
-      = link_to '/', class: 'logo' do
-        = image_tag 'logo.svg'
-      .links
-        = link_to 'The Venue', '#', class: 'link scroll', data: { anchor: 'venue' }
-        = link_to 'Lodging', '#', class: 'link scroll'
-        = link_to 'Registry', '#', class: 'link scroll'
-        = link_to 'RSVP', 'https://docs.google.com/forms/d/e/1FAIpQLSdlM_sFthDq0tHJtlYM4khhgnhe6OCOTxUIff9lF--zMtRobQ/viewform', class: 'link'
     = yield

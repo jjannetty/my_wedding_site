@@ -31,15 +31,17 @@ h2 {
 
 nav {
   @include clearfix;
-  background: $yellow;
+  background: tranparent;
+  margin-bottom: 40px;
 
   .links {
     float: right;
 
     .link {
       @include transition(all 0.2s);
-      color: $black;
+      color: white;
       float: left;
+      font-weight: bold;
       margin: 26px 30px 0 0;
       text-decoration: none;
 
@@ -80,8 +82,14 @@ nav {
     }
   }
   .logo {
+    display: block;
     float: left;
     margin: 20px 0 0 30px;
+
+    img {
+      display: block;
+      width: 73px;
+    }
 
     @include small-device {
       display: none;
@@ -91,7 +99,7 @@ nav {
 
 .button {
   @include transition(all 0.2s);
-  color: $black;
+  color: white;
   border: 2px solid white;
   border-radius: 3px;
   display: block;
@@ -104,6 +112,7 @@ nav {
 
   &:hover {
     background: white;
+    color: $black;
 
     @include small-device {
       background: none;
@@ -120,12 +129,22 @@ nav {
 }
 
 .hero {
-  background: $yellow;
-  padding: 148px 0 200px;
+  background: url('/images/collage-yellow.jpg');
+  background-size: 100%;
+  padding: 0 0 100px;
 
   @include small-device {
-    padding: 120px 0 70px;
+    padding: 0 0 70px;
   }
+}
+
+.hero-circle {
+  border-radius: 50%;
+  background: $yellow;
+  height: 480px;
+  padding-top: 100px;
+  width: 580px;
+  margin: 0 auto;
 }
 
 .hero-logo {
