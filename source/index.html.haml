@@ -3,30 +3,29 @@ title: John & Solange
 ---
 
 .hero
-  %nav
-    = link_to '/', class: 'logo' do
-      = image_tag 'logo.svg'
-    .links
-      = link_to 'The Venue', '#', class: 'link scroll', data: { anchor: 'venue' }
-      = link_to 'Lodging', '#', class: 'link scroll'
-      = link_to 'Registry', '#', class: 'link scroll'
-      = link_to 'RSVP', 'https://docs.google.com/forms/d/e/1FAIpQLSdlM_sFthDq0tHJtlYM4khhgnhe6OCOTxUIff9lF--zMtRobQ/viewform', class: 'link'
   .hero-circle
     = image_tag 'hero-logo.svg', class: 'hero-logo'
 
     = link_to 'RSVP', 'https://docs.google.com/forms/d/e/1FAIpQLSdlM_sFthDq0tHJtlYM4khhgnhe6OCOTxUIff9lF--zMtRobQ/viewform', class: 'button'
 
 %section#venue
-  .wrapper
+  .wrapper.margin-bottom
     %h2
       The Venue
-    #map
-    .content
-      %p
-        The wedding will take place on the waterfront at Cordage Commerce center. It will be a tented reception with plenty of parking.
-      %p
-        %strong
-          10 Cordage Park Circle
-      %p
-        %strong
-          Plymouth, MA 02360
+    .half
+      .padding-right
+        #map
+    .half.align-left
+      .padding-left
+        %p
+          The wedding will take place on the waterfront at Cordage Commerce center. It will be a tented reception with plenty of parking.
+        %p
+          %strong
+            10 Cordage Park Circle
+        %p
+          %strong
+            Plymouth, MA 02360
+
+  .wrapper
+    %h3
+      Timeline

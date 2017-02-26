@@ -48,6 +48,19 @@ $(document).ready(function(){
     map: map
   });
 
+  $(window).scroll(function(){
+    var triggerHeight = $('.hero-logo').offset().top;
+    var scrollPosition = $(window).scrollTop();
+
+    if(scrollPosition > triggerHeight) {
+      $('nav').addClass('scrolling');
+    }
+
+    else if(scrollPosition < triggerHeight) {
+      $('nav').removeClass('scrolling');
+    }
+  });
+
   $('.scroll').click(function(){
     var anchor = $(this).data('anchor');
     var id = "#" + anchor;
