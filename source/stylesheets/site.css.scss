@@ -1,7 +1,6 @@
 @charset "utf-8";
 @import "normalize";
 @import "bourbon/bourbon";
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 
 @mixin small-device {
   @media (max-width: 480px) {
@@ -34,6 +33,11 @@ h3 {
   letter-spacing: 3px;
   margin-bottom: 60px;
   text-transform: uppercase;
+}
+
+h6 {
+  font-size: 17px;
+  margin: 0 0 25px 0;
 }
 
 .half {
@@ -176,8 +180,44 @@ nav {
   }
 }
 
+p {
+  line-height: 1.5em;
+}
+
 section {
   padding: 100px 2%;
+}
+
+.step {
+  width: 33.333%;
+  float: left;
+
+  p {
+    padding: 0 40px;
+  }
+
+  .time {
+    color: $yellow;
+    font-family: "Rokkitt";
+    font-size: 26px;
+    margin-bottom: 14px;
+    position: relative;
+
+    .arrow {
+      @include position(absolute, 50% null null -25%);
+      @include size(50% 1px);
+      background: $black;
+
+      &:after {
+        @include position(absolute, 40% -6px null null);
+        @include size(7px 6px);
+        background: url('/images/arrow-head.svg');
+        content: '';
+        display: block;
+        margin-top: -2px;
+      }
+    }
+  }
 }
 
 .align-left {
