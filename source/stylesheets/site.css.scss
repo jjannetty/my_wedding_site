@@ -3,8 +3,26 @@
 @import "bourbon/bourbon";
 
 @mixin small-device {
-  @media (max-width: 480px) {
+  @media (max-width: 550px) {
     @content;
+  }
+}
+
+@mixin col($count) {
+  $width: (100% - ($count * 4))/$count;
+
+  float: left;
+  margin: 0 2%;
+  position: relative;
+  width: $width;
+
+  @include small-device {
+    width: 94%;
+    margin: 0 3% 50px;
+  }
+
+  img {
+    width: 100%;
   }
 }
 
@@ -18,9 +36,58 @@ body {
   font-size: 1em;
 }
 
-#map {
-  width: 100%;
-  height: 232px
+.address {
+  color: white;
+  font-style: italic;
+}
+
+.book-online {
+  padding: 20px;
+
+  .button {
+    font-size: 16px;
+    padding: 10px 0;
+    width: 100%;
+  }
+}
+
+.button {
+  @include transition(all 0.2s);
+  color: white;
+  border: 2px solid white;
+  border-radius: 3px;
+  display: block;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 30px;
+  width: 200px;
+  margin: 0 auto;
+  text-decoration: none;
+
+  &:hover {
+    background: white;
+    color: $black;
+
+    @include small-device {
+      background: none;
+    }
+  }
+
+  &:active {
+    opacity: 0.7;
+
+    @include small-device {
+      background: white;
+    }
+  }
+}
+
+.color-white {
+  color: white;
+}
+
+.color-yellow {
+  color: $yellow;
 }
 
 h2 {
@@ -41,16 +108,40 @@ h6 {
 }
 
 .half {
+  @include col(2);
   float: left;
-  width: 50%;
+  width: 46%;
+}
 
-  .padding-left {
-    padding-left: 30px;
-  }
+.hero {
+  background: url('/images/collage-dark.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 210px 0 200px;
 
-  .padding-right {
-    padding-right: 30px;
+  @include small-device {
+    padding: 180px 0 165px;
   }
+}
+
+.hero-logo {
+  margin-bottom: 80px;
+  width: 338px;
+
+  @include small-device {
+    width: 70%;
+  }
+}
+
+.hotel {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#map {
+  width: 100%;
+  height: 232px
 }
 
 nav {
@@ -58,6 +149,7 @@ nav {
   @include position(fixed, 0 0 null 0);
   @include clearfix;
   border-bottom: 2px solid $yellow;
+  z-index: 99999999999999;
 
   .links {
     float: right;
@@ -129,71 +221,54 @@ nav {
   }
 }
 
-.button {
-  @include transition(all 0.2s);
-  color: white;
-  border: 2px solid white;
-  border-radius: 3px;
-  display: block;
-  padding: 10px 20px;
-  font-weight: 700;
-  font-size: 30px;
-  width: 200px;
-  margin: 0 auto;
-  text-decoration: none;
-
-  &:hover {
-    background: white;
-    color: $black;
-
-    @include small-device {
-      background: none;
-    }
-  }
-
-  &:active {
-    opacity: 0.7;
-
-    @include small-device {
-      background: white;
-    }
-  }
-}
-
-.hero {
-  background: url('/images/collage-dark.jpg');
-  background-size: cover;
-  background-position: center;
-  padding: 210px 0 200px;
-
-  @include small-device {
-    padding: 180px 0 165px;
-  }
-}
-
-.hero-logo {
-  margin-bottom: 80px;
-  width: 338px;
-
-  @include small-device {
-    width: 70%;
-  }
-}
-
 p {
   line-height: 1.5em;
 }
 
+.quarter {
+  @include col(4);
+}
+
 section {
-  padding: 100px 2%;
+  padding: 50px 2%;
+
+  &.dark {
+    background: $black;
+  }
 }
 
 .step {
-  width: 33.333%;
+  @include col(3);
   float: left;
 
-  p {
-    padding: 0 40px;
+  .arrow {
+    @include position(absolute, 13px -33% null null);
+    @include size(50% 1px);
+    background: $black;
+
+    &:after {
+      @include position(absolute, 40% -6px null null);
+      @include size(7px 6px);
+      background: url('/images/arrow-head.svg');
+      content: '';
+      display: block;
+      margin-top: -2px;
+    }
+
+    @include small-device {
+      @include position(absolute, 100% null null 50%);
+      @include size(1px 30px);
+      background: $black;
+
+      &:after {
+        @include position(absolute, 100% null null -3px);
+        @include size(7px 6px);
+        @include transform(rotate(90deg));
+        background: url('/images/arrow-head.svg');
+        content: '';
+        display: block;
+      }
+    }
   }
 
   .time {
@@ -202,21 +277,6 @@ section {
     font-size: 26px;
     margin-bottom: 14px;
     position: relative;
-
-    .arrow {
-      @include position(absolute, 50% null null -25%);
-      @include size(50% 1px);
-      background: $black;
-
-      &:after {
-        @include position(absolute, 40% -6px null null);
-        @include size(7px 6px);
-        background: url('/images/arrow-head.svg');
-        content: '';
-        display: block;
-        margin-top: -2px;
-      }
-    }
   }
 }
 
@@ -228,9 +288,6 @@ section {
   @include clearfix;
   margin: 0 auto;
   max-width: 960px;
+  padding: 50px 0;
   width: 100%;
-
-  &.margin-bottom {
-    margin-bottom: 70px;
-  }
 }

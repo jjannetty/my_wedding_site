@@ -9,26 +9,25 @@ title: John & Solange
     = link_to 'RSVP', 'https://docs.google.com/forms/d/e/1FAIpQLSdlM_sFthDq0tHJtlYM4khhgnhe6OCOTxUIff9lF--zMtRobQ/viewform', class: 'button'
 
 %section#venue
-  .wrapper.margin-bottom
+  .wrapper
     %h2
       The Venue
     .half
-      .padding-right
-        #map
+      #map
     .half.align-left
-      .padding-left
-        %p
-          The wedding will take place on the waterfront at Cordage Commerce center. It will be a tented reception with plenty of parking.
-        %strong
-          10 Cordage Park Circle
-        %br
-        %strong
-          Plymouth, MA 02360
+      %p
+        The wedding will take place on the waterfront at Cordage Commerce center. It will be a tented reception with plenty of parking.
+      %strong
+        10 Cordage Park Circle
+      %br
+      %strong
+        Plymouth, MA 02360
 
   .wrapper
     %h3
       Timeline
     .step
+      .arrow
       .time
         4PM
       %h6
@@ -36,9 +35,9 @@ title: John & Solange
       %p
         The cermemony will be officiated by James Duggan, a close friend of the bride and groom.
     .step
+      .arrow
       .time
         5PM
-        .arrow
       %h6
         Cocktail Hour
       %p
@@ -46,8 +45,75 @@ title: John & Solange
     .step
       .time
         6PM
-        .arrow
       %h6
         Reception
       %p
         There will be a buffet style dinner, live music, dancing, and a bonfire on the beach!
+
+%section.dark#lodging
+  .wrapper
+    %h2.color-yellow
+      Lodging
+    .half.align-left
+      .hotel
+        Baymont Inn & Suites
+      .address
+        149 Main St
+      .address
+        Kingston, MA 02364
+      .address
+        (781) 585-3831
+      %p.color-white
+        In order to reserve a room for a discount rate, you need to call and reserve a room under the “Connolly, Jannetty” wedding room block. Rooms are limited, so the discount is first come first serve.
+      %p.color-white
+        There will be a shuttle providing transport to and from Baymont Inn & Suites and the venue.
+    .half
+      = image_tag 'bay-inn.jpg'
+
+  .wrapper
+    %h3.color-white
+      Other nearby hotels
+    .quarter
+      .hotel
+        Best Western
+      .address
+        180 Court St
+      .address
+        Plymouth, MA 02360
+      .address
+        (508) 746-2222
+      .book-online
+        = link_to 'Book Online', 'https://www.bestwestern.com/en_US/book/hotel-details.22050.html?iata=00171880&ssob=BLBWI0004G&cid=BLBWI0004G:google:gmb:22050', class: 'button', target: '_blank'
+    .quarter
+      .hotel
+        Hotel 1620
+      .address
+        180 Water St
+      .address
+        Plymouth, MA 02360
+      .address
+        (508) 747-4900
+      .book-online
+        = link_to 'Book Online', 'http://www.hotel1620.com/', class: 'button', target: '_blank'
+    .quarter
+      .hotel
+        Hampton Inn & Suites
+      .address
+        10 Plaza Way
+      .address
+        Plymouth, MA 02360
+      .address
+        (508) 747-5000
+      .book-online
+        = link_to 'Book Online', 'http://hamptoninn3.hilton.com/en/hotels/massachusetts/hampton-inn-and-suites-plymouth-PYMHSHX/index.html', class: 'button', target: '_blank'
+    .quarter
+      .hotel
+        Comfort Inn
+      .address
+        155 Samoset St
+      .address
+        Plymouth, MA 02360
+      .address
+        (508) 746-2800
+      .book-online
+        = link_to 'Book Online', 'https://www.choicehotels.com/massachusetts/plymouth/comfort-inn-hotels/ma013?source=gyxt', class: 'button', target: '_blank'
