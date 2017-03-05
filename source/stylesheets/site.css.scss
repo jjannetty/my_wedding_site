@@ -90,6 +90,15 @@ body {
   color: $yellow;
 }
 
+.divider {
+  @include small-device {
+    background: $yellow;
+    height: 2px;
+    margin: 0 auto;
+    width: 50%;
+  }
+}
+
 h2 {
   letter-spacing: 3px;
   margin-bottom: 90px;
@@ -218,6 +227,20 @@ nav {
         fill: $black;
       }
     }
+  }
+}
+
+.only-desktop {
+  @include small-device {
+    display: none;
+  }
+}
+
+.only-mobile {
+  display: none;
+
+  @include small-device {
+    display: block;
   }
 }
 
