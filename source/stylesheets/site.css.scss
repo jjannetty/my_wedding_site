@@ -90,6 +90,17 @@ body {
   color: $yellow;
 }
 
+.disclaimer {
+  background: lighten($yellow, 40);
+  padding: 30px 50px 50px 50px;
+  float: left;
+
+  .text {
+    font-size: 18px;
+    line-height: 1.5em;
+  }
+}
+
 .divider {
   @include small-device {
     background: $yellow;
@@ -150,7 +161,7 @@ h6 {
 
 #map {
   width: 100%;
-  height: 232px
+  height: 300px
 }
 
 nav {
@@ -258,11 +269,16 @@ section {
   &.dark {
     background: $black;
   }
+
+  &.yellow {
+    background: $yellow;
+  }
 }
 
 .step {
   @include col(3);
   float: left;
+  margin-bottom: 50px;
 
   .arrow {
     @include position(absolute, 13px -33% null null);
@@ -300,6 +316,10 @@ section {
     font-size: 26px;
     margin-bottom: 14px;
     position: relative;
+  }
+
+  @include small-device {
+    float: none;
   }
 }
 
